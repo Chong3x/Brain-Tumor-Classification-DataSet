@@ -1,0 +1,22 @@
+# Set parameters
+img_size = 128
+batch_size = 32
+
+# Create data generators
+datagen = ImageDataGenerator(rescale=1./255, validation_split=0.2)
+
+train_generator = datagen.flow_from_directory(
+    'data/brain_tumor_dataset',
+    target_size=(img_size, img_size),
+    batch_size=batch_size,
+    class_mode='binary',
+    subset='training'
+)
+
+validation_generator = datagen.flow_from_directory(
+    'data/brain_tumor_dataset',
+    target_size=(img_size, img_size),
+    batch_size=batch_size,
+    class_mode='binary',
+    subset='validation'
+)
