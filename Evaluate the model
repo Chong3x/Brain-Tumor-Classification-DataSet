@@ -1,0 +1,10 @@
+# Evaluate the Model
+test_generator = datagen.flow_from_directory(
+    'data/brain_tumor_dataset/test',
+    target_size=(img_size, img_size),
+    batch_size=batch_size,
+    class_mode='binary'
+)
+
+test_loss, test_accuracy = model.evaluate(test_generator, steps=test_generator.samples // batch_size)
+print(f"Test Accuracy: {test_accuracy:.4f}")
