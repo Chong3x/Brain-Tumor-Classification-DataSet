@@ -1,0 +1,2 @@
+The dataset contains MRI images of brain tumors. It is divided into training and testing sets.
+The images are categorized into two classes: with tumor and without tumor. Each image is labeled accordingly to help the model learn and differentiate between the two categories.
